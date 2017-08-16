@@ -1,0 +1,10 @@
+
+--local_parameter_device=cpu --num_gpus=2 --batch_size=32 --model=vgg16 --variable_update=parameter_server --nodistortions --data_dir=/mnt/fuz/codes/benchmarks/data/imagenet/train
+
+--local_parameter_device=gpu --num_gpus=2 --batch_size=32 --model=vgg16 --variable_update=parameter_server --nodistortions
+
+
+
+#### Distributed ps
+
+--local_parameter_device=cpu --num_gpus=2 --batch_size=64 --model=vgg16 --variable_update=parameter_server --job_name=worker --ps_hosts=10.0.0.1:50000,10.0.0.2:50000 --worker_hosts=10.0.0.1:50001,10.0.0.2:50001 --task_index=0 --data_dir=/mnt/fuz/codes/benchmarks/data/imagenet/train
